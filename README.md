@@ -1,1 +1,1 @@
-# social-network-analysis
+# Equivalence-based role mining in network
