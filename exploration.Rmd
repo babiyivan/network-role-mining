@@ -1,0 +1,24 @@
+```{r}
+# Load necessary libraries
+library(arrow)
+library(igraph)
+```
+
+```{r}
+df <- read_parquet("data/df_edge_list_directed_users_postings_replies.parquet")
+
+g <- graph_from_data_frame(df, directed = TRUE)
+
+in_deg <- degree(g, mode = "in")
+
+# Define a color palette
+palette <- colorRampPalette(c("blue", "red"))
+
+# Map in-degrees to colors
+vertex_colors <- palette(max(in_deg) + 1)[in_deg + 1]
+
+layout <- layout_with_kk(g)
+plot(g, layout = layout, vertex.size = 3, vertex.label = NA, vertex.color = vertex_colors)
+
+
+```
