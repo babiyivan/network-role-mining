@@ -43,9 +43,9 @@ Inspect permuted matrices
 
 ```{r}
 res = list()
-res[['replies']] = readRDS('results/replies-276.rds')
-res[['votes']] = readRDS('results/votes-276.rds')
-res[['follows']] = readRDS('results/follows-276.rds')
+res[['replies']] = readRDS('results/bm-replies-276.rds')
+res[['votes']] = readRDS('results/bm-votes-276.rds')
+res[['follows']] = readRDS('results/bm-follows-276.rds')
 ```
 
 ```{r}
