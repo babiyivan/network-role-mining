@@ -14,6 +14,10 @@ df <- read_parquet("data/df_edge_list_directed_users_postings_replies.parquet") 
 g_undir <- graph_from_data_frame(df, directed = FALSE)
 g <- graph_from_data_frame(df, directed = TRUE)
 
+votes = read_parquet("data/df_edge_list_directed_users_votes_to_postings_net.parquet") %>%
+  rename(weight = count_votes_to_postings_net)
+g_votes = graph_from_data_frame(votes, directed = TRUE)
+
 while (TRUE) {
   comm = cluster_louvain(g_undir)
   comm_sizes = sizes(comm)
@@ -24,30 +28,34 @@ while (TRUE) {
 }
 smallest = which.min(comm_sizes)
 g = induced_subgraph(g, communities(comm)[[smallest]])
-write_graph(g, 'replies-276.graphml', format='graphml')
+# write_graph(g, 'replies-276.graphml', format='graphml')
 
 # to use subgraph extracted before
-g <- read_graph('replies-141.graphml', format = 'graphml')
+g_replies <- read_graph('replies-276.graphml', format = 'graphml')
+g_votes <- induced_subgraph(g_votes, vids = V(g_replies)$name)
+# write_graph(g_votes, 'votes-276.graphml', format = 'graphml')
+
 ```
 
 
 ```{r}
-M <- as_adjacency_matrix(g)
+M <- as_adjacency_matrix(g_votes)
 results = list()
 for (k in 3:8) {
   res <- optRandomParC(M = M, k = k, rep = 1000,
       approach = "bin", blocks = c('nul', 'com', 'reg'), nCores = 0)
   print(err(res))
-  plot(res, main = paste('Permuted matrix with', k, 'groups'),
-    mar = c(1, 2, 3, 1), title.line = 2)
+#  plot(res, main = paste('Permuted matrix with', k, 'groups'),
+ #   mar = c(1, 2, 3, 1), title.line = 2)
   results[[k]] = res
 }
 for (r in results){
   print(err(r))
 }
 ```
+
 ```{r}
-saveRDS(results, file='replies-276.rds')
+saveRDS(results, file='votes-276.rds')
 ```
 
 ```{r}
