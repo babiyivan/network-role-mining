@@ -1,0 +1,104 @@
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(arrow)
+library(igraph)
+library(blockmodeling)
+```
+
+# Read graphs.
+
+```{r}
+g_replies <- read_graph('graphs/replies-276.graphml', format = 'graphml')
+g_votes <- read_graph('graphs/votes-276.graphml', format = 'graphml')
+g_follows <- read_graph('graphs/follows-276.graphml', format = 'graphml')
+```
+
+# Perform blockmodelling on the three graphs.
+
+Takes a long time. Not necessary to run if .rds result files already available.
+
+```{r}
+n = vcount(g_replies)
+gs = list(replies = g_replies, votes = g_votes, follows = g_follows)
+
+for (x in c('replies', 'votes', 'follows')) {
+  M <- as_adjacency_matrix(gs[[x]], sparse = FALSE)
+  results = list()
+  for (k in 3:8) {
+    res <- optRandomParC(M = M, k = k, rep = 1000,
+        approach = "bin", blocks = c('nul', 'com', 'reg'), nCores = 0)
+    print(err(res))
+    results[[k]] = res
+  }
+  saveRDS(results, file=paste('results/', x, '-', n, '.rds', sep=''))
+}
+for (r in results){
+  print(err(r))
+}
+```
+
+# Analyse groups found by blockmodelling.
+
+Inspect permuted matrices
+
+```{r}
+res = list()
+res[['replies']] = readRDS('results/replies-276.rds')
+res[['votes']] = readRDS('results/votes-276.rds')
+res[['follows']] = readRDS('results/follows-276.rds')
+```
+
+```{r}
+for (x in c('replies', 'votes', 'follows')) {
+  for (k in 3:8) {
+    plot(res[[x]][[k]], main = paste('Permuted matrix for', x, 'with', k, 'groups'),
+      mar = c(1, 2, 3, 1), title.line = 2)
+  }
+}
+```
+
+Inspect number of regular equivalence violations over different numbers of groups.
+
+```{r}
+err_replies = sapply(res[['replies']], err)[3:8]
+err_votes = sapply(res[['votes']], err)[3:8]
+err_follows = sapply(res[['follows']], err)[3:8]
+
+for (err in list(err_replies, err_votes, err_follows)) {
+  plot(
+    3:8, 
+    err, 
+    type = 'b', 
+    col = 'red', 
+    xlab = 'Number of groups', 
+    ylab = 'Number of regular equivalence violations', 
+    main = 'Number of regular equivalence inconsistencies in emperical graph'
+  )
+}
+
+```
+
+```{r}
+errrate_replies = err_replies / ecount(g_replies)
+errrate_votes = err_votes / ecount(g_votes)
+errrate_follows = err_follows / ecount(g_follows)
+
+errs <- data.frame(
+  groups = rep(3:8, 3),
+  error_rate = c(errrate_replies, errrate_votes, errrate_follows) ,
+  type = rep(c('replies', 'votes', 'follows'), each = 6)
+)
+
+ggplot(errs, aes(x = groups, y = error_rate, color = type)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Error Rates for Different Numbers of Groups",
+       x = "Number of Groups",
+       y = "Inconsistency Rate") +
+  theme_minimal()
+```
+
+```{r}
+IM(res[['follows']][[4]])
+```
+

@@ -1,0 +1,53 @@
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(arrow)
+library(igraph)
+```
+
+We extract subgraphs of an appropriate size from the sparsest graph, the replies graph, using the modularity maximisation community detection algorithm, then extract the same nodes in the community from the votes and follows graphs.
+
+```{r}
+df_replies <- read_parquet("data/df_edge_list_directed_users_postings_replies.parquet") %>%
+    rename(weight = count_posting_replies)
+g_replies_undir = graph_from_data_frame(df_replies, directed = FALSE)
+g_replies <- graph_from_data_frame(df_replies, directed = TRUE)
+
+upper = 300
+lower = 200
+
+# use modularity maximisation on the undirected graph to find a community of appropriate size
+while (TRUE) {
+  comm = cluster_louvain(g_replies_undir)
+  comm_sizes = sizes(comm)
+  if ( min(comm_sizes) > lower & min(comm_sizes) < upper) {
+    print(min(comm_sizes))
+    break
+  }
+}
+
+n = min(comm_sizes)
+smallest = which.min(comm_sizes)
+g_replies = induced_subgraph(g_replies, communities(comm)[[smallest]])
+
+nodes = V(g_replies)$name
+
+# extract same nodes from votes graph
+votes = read_parquet("data/df_edge_list_directed_users_votes_to_postings_net.parquet") %>%
+  rename(weight = count_votes_to_postings_net)
+g_votes = graph_from_data_frame(votes, directed = TRUE)
+g_votes <- induced_subgraph(g_votes, vids = nodes)
+
+# extract same nodes from follows graph
+follows = read_parquet('data/df_edge_list_directed_users_combined_postings_replies_and_votes_to_postings_net_and_follow_connections.parquet')
+follows = follows %>% filter(count_follow_connection > 0) %>%
+  rename(weight = count_follow_connection)
+g_follows =  graph_from_data_frame(follows, directed = TRUE)
+g_follows = induced_subgraph(g_follows, vids = nodes)
+
+write_graph(g_replies, paste('graphs/replies-',n,'.graphml', sep=''), format='graphml')
+write_graph(g_votes, paste('graphs/votes-',n,'.graphml', sep=''), format = 'graphml')
+write_graph(g_follows, paste('graphs/follows-',n,'.graphml', sep=''), format = 'graphml')
+```
+
+
+
