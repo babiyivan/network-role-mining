@@ -25,8 +25,6 @@ gs = list(replies = g_replies, votes = g_votes, follows = g_follows)
 Takes a long time. Not necessary to run if .rds result files already available.
 
 ```{r}
-
-
 for (x in c('replies', 'votes', 'follows')) {
   M <- as_adjacency_matrix(gs[[x]], sparse = FALSE)
   results = list()
@@ -36,30 +34,33 @@ for (x in c('replies', 'votes', 'follows')) {
     print(err(res))
     results[[k]] = res
   }
-  saveRDS(results, file=paste('results/', x, '-', n, '.rds', sep=''))
+  # saveRDS(results, file=paste('results/bm/', x, '-', n, '.rds', sep=''))
 }
 for (r in results){
   print(err(r))
 }
 ```
 
+
 # Results analysis
 
-# Analyse groups found by blockmodelling.
+## Analyse groups found by blockmodelling.
 
 Inspect permuted matrices
 
 ```{r}
 res = list()
-res[['replies']] = readRDS('results/bm-replies-276.rds')
-res[['votes']] = readRDS('results/bm-votes-276.rds')
-res[['follows']] = readRDS('results/bm-follows-276.rds')
+res[['replies']] = readRDS('results/bm/bm-replies-276.rds')
+res[['votes']] = readRDS('results/bm/bm-votes-276.rds')
+res[['follows']] = readRDS('results/bm/bm-follows-276.rds')
 ```
+
+Print adjacency matrices
 
 ```{r}
 for (x in c('replies', 'votes', 'follows')) {
   for (k in 3:8) {
-    png(paste('adjmat-',x,'-',k,'.png', sep=''), width = 800, height = 800)
+    png(paste('results/adjmat-',x,'-',k,'.png', sep=''), width = 800, height = 800)
     plot(res[[x]][[k]], main = paste('Permuted matrix for', x, 'with', k, 'groups'),
       mar = c(1, 2, 3, 1), lwd=1)
     dev.off()
@@ -67,7 +68,7 @@ for (x in c('replies', 'votes', 'follows')) {
 }
 ```
 
-Inspect number of regular equivalence violations over different numbers of groups.
+Inspect number of regular equivalence inconsistencies over different numbers of groups.
 
 ```{r}
 err_replies = sapply(res[['replies']], err)[3:8]
@@ -84,22 +85,22 @@ for (err in list(err_replies, err_votes, err_follows)) {
       y = 'Number of regular equivalence violations'
     ) +
     theme_minimal()
-  
   print(p)
 }
-ggplot(mapping=aes(x = 3:8, y = err_follows)) +
-    geom_line(color = 'red') +
-    geom_point(color = 'red') +
-    labs(
-      title = 'Number of regular equivalence inconsistencies in empirical graph',
-      x = 'Number of groups',
-      y = 'Number of regular equivalence violations'
-    ) +
-    theme_minimal()
-ggsave('incons-follows.svg')
+# export plots
+# ggplot(mapping=aes(x = 3:8, y = err_follows)) +
+#     geom_line(color = 'red') +
+#     geom_point(color = 'red') +
+#     labs(
+#       title = 'Number of regular equivalence inconsistencies in empirical graph',
+#       x = 'Number of groups',
+#       y = 'Number of regular equivalence violations'
+#     ) +
+#     theme_minimal()
+# ggsave('results/bm/incons-follows.svg')
 ```
 
-# Inspect overall inconsistency rates in all 3 graphs
+## Inspect overall inconsistency rates in all 3 graphs
 
 ```{r}
 errrate_replies = err_replies / ecount(g_replies)
@@ -120,19 +121,18 @@ ggplot(errs, aes(x = groups, y = error_rate, color = type)) +
        y = "Inconsistency Rate") +
   theme_minimal()
 
-ggsave('incons.svg')
-```
-```{r}
-
+# ggsave('results/incons.svg')
 ```
 
+## Inspect relationship between groups
 
+Build data frames with node membership info
 
 ```{r}
-k = list(replies = 3, votes = 4, follows = 4)
+# set number of groups in each graph based on findings 
+k = list(replies = 3, votes = 4, follows = 3)
 
 groups = list(3)
-
 
 for (type in c('replies', 'votes', 'follows')) {
   clus = data.frame(
@@ -140,36 +140,40 @@ for (type in c('replies', 'votes', 'follows')) {
     type = clu(res[[type]][[k[[type]]]])
   )
   names(clus) = c('name', paste('group_', type, sep=''))
-  clus = clus %>%
-    mutate(
-      indegree = degree(gs[[type]], mode = 'in'),
-      outdegree = degree(gs[[type]], mode = 'out'),
-      betweenness = betweenness(gs[[type]]),
-      eigen = eigen_centrality(gs[[type]])$vector
-    )
-  gs[[type]]$group = clu(res[[type]][[k[[type]]]])
   groups[[type]] = clus
 }
 
-
-for (type in c('replies', 'votes', 'follows')) {
-  x = paste('group_', type, sep='')
-  for (col in c('indegree', 'outdegree', 'betweenness', 'eigen')) {
-    p = ggplot(groups[[type]], aes(x = as.factor(.data[[x]]), y = .data[[col]])) +
-      geom_boxplot() +
-      labs(
-        title = paste('Boxplot of', col, 'by group in', type, 'graph'),
-        x = 'Group',
-        y = col
-      ) +
-      theme_minimal() +
-      theme(axis.text.x = element_text(angle = 90, hjust = 1))
-    print(p)
-    ggsave(paste(type, '-', col, '.svg', sep=''))
-  }
-}
-
 ```
+
+Build graph of relationships between different equivalence classes
+
+```{r}
+group_rel = list(3)
+for (type in c('replies', 'votes', 'follows')) {
+  A = IM(res[[type]][[k[[type]]]])
+
+  A[A == 'com'] <- 1
+  A[A == 'reg'] <- 1
+  A[A == 'nul'] <- 0
+  
+  A = matrix(as.numeric(A), nrow = nrow(A), ncol = ncol(A))
+  
+  g <- graph_from_adjacency_matrix(A, mode = "directed", weighted = FALSE)
+  
+  group_col = paste('group_', type, sep='')
+  
+  group_sizes = count(groups[[type]], !!sym((group_col)))
+  
+  # png(paste('results/bm/rel-', type, '.png', sep=''))
+  plot(g, layout = layout_with_fr(g, maxx=rep(400, vcount(g))),
+       vertex.frame.width=0, vertex.color = V(g), vertex.size = group_sizes$n,vertex.label.color='black',
+       edge.arrow.size = .5, loop.size = 1.5)
+  # dev.off()
+  group_rel[[type]] = g
+}
+```
+
+## Inpsect combinations of group membership of nodes across replying, voting, following behaviours
 
 
 ```{r}
@@ -193,4 +197,53 @@ ggplot(group_freq, aes(x = fct_reorder(group, n, .desc = TRUE), y = n)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 ```
+
+## Inspect network properties by group
+
+```{r}
+k = list(replies = 3, votes = 4, follows = 3)
+
+groups = list(3)
+
+
+for (type in c('replies', 'votes', 'follows')) {
+  clus = data.frame(
+    name = V(gs[[type]])$name,
+    type = clu(res[[type]][[k[[type]]]])
+  )
+  names(clus) = c('name', paste('group_', type, sep=''))
+  clus = clus %>%
+    mutate(
+      indegree = degree(gs[[type]], mode = 'in'),
+      outdegree = degree(gs[[type]], mode = 'out'),
+      betweenness = betweenness(gs[[type]]),
+      eigen = eigen_centrality(gs[[type]])$vector
+    )
+  # add group membership to graph objects
+  gs[[type]]$group = clu(res[[type]][[k[[type]]]])
+  groups[[type]] = clus
+}
+
+
+for (type in c('replies', 'votes', 'follows')) {
+  x = paste('group_', type, sep='')
+  for (col in c('indegree', 'outdegree', 'betweenness', 'eigen')) {
+    p = ggplot(groups[[type]], aes(x = as.factor(.data[[x]]), y = .data[[col]])) +
+      geom_boxplot() +
+      labs(
+        title = paste('Boxplot of', col, 'by group in', type, 'graph'),
+        x = 'Group',
+        y = col
+      ) +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    print(p)
+    # ggsave(paste('results/bm/', type, '-', col, '.svg', sep=''))
+  }
+}
+
+```
+
+
+
 
