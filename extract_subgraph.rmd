@@ -63,7 +63,7 @@ g_follows_undir = induced_subgraph(g_follows_undir, nodes)
 
 comm = cluster_louvain(g_follows_undir)
 comm_sizes = sizes(comm)
-n = comm_sizes[(140 < comm_sizes & comm_sizes < 160)][1]
+n = comm_sizes[(300 < comm_sizes & comm_sizes < 310)][1]
 
 idx = which(comm_sizes == n)
 base = induced_subgraph(g_follows, communities(comm)[[idx]])
