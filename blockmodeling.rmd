@@ -12,12 +12,12 @@ library(svglite)
 # Read graphs.
 
 ```{r}
-g_replies <- read_graph('graphs/replies-276.graphml', format = 'graphml')
-g_votes <- read_graph('graphs/votes-276.graphml', format = 'graphml')
-g_follows <- read_graph('graphs/follows-276.graphml', format = 'graphml')
-
-n = vcount(g_replies)
-gs = list(replies = g_replies, votes = g_votes, follows = g_follows)
+types = c('replies', 'votes', 'follows')
+gs = list()
+n = 310
+for (t in types) {
+  gs[[t]] = read_graph(paste('graphs/',t,'-',n,'.graphml', sep=''), format = 'graphml')
+}
 ```
 
 # Perform blockmodelling on the three graphs.
@@ -25,17 +25,22 @@ gs = list(replies = g_replies, votes = g_votes, follows = g_follows)
 Takes a long time. Not necessary to run if .rds result files already available.
 
 ```{r}
-for (x in c('replies', 'votes', 'follows')) {
+bm = list()
+appr = 'bin'
+appr = 'val'
+for (x in types) {
   M <- as_adjacency_matrix(gs[[x]], sparse = FALSE)
   results = list()
   for (k in 3:8) {
     res <- optRandomParC(M = M, k = k, rep = 1000,
-        approach = "bin", blocks = c('nul', 'com', 'reg'), nCores = 0)
+        approach = appr, blocks = c('nul', 'com', 'reg'), nCores = 0)
     print(err(res))
     results[[k]] = res
   }
   # saveRDS(results, file=paste('results/bm/', x, '-', n, '.rds', sep=''))
+  bm[[x]] = results
 }
+saveRDS(bm, file=paste('results/bm/', 'bm-all-', n, '-', appr, '.rds', sep=''))
 for (r in results){
   print(err(r))
 }
@@ -49,21 +54,28 @@ for (r in results){
 Inspect permuted matrices
 
 ```{r}
+# binary/unweighted blockmodelling results
 res = list()
 res[['replies']] = readRDS('results/bm/bm-replies-276.rds')
 res[['votes']] = readRDS('results/bm/bm-votes-276.rds')
 res[['follows']] = readRDS('results/bm/bm-follows-276.rds')
+
+# valued/weighted blockmodelling results
+res = readRDS('results/bm/bm-all-val.rds')
 ```
 
 Print adjacency matrices
 
 ```{r}
-for (x in c('replies', 'votes', 'follows')) {
+for (x in types) {
   for (k in 3:8) {
-    png(paste('results/adjmat-',x,'-',k,'.png', sep=''), width = 800, height = 800)
+    # png(paste('results/adjmat-',x,'-',k,'.png', sep=''), width = 800, height = 800)
     plot(res[[x]][[k]], main = paste('Permuted matrix for', x, 'with', k, 'groups'),
-      mar = c(1, 2, 3, 1), lwd=1)
-    dev.off()
+      mar = c(1, 2, 3, 1), title.line = 2)
+    dens = funByBlocks(res[[x]][[k]])
+    dens[is.nan(dens)] <- 0
+    # plotMat(dens)
+    # dev.off()
   }
 }
 ```
@@ -110,7 +122,7 @@ errrate_follows = err_follows / ecount(g_follows)
 errs <- data.frame(
   groups = rep(3:8, 3),
   error_rate = c(errrate_replies, errrate_votes, errrate_follows) ,
-  type = rep(c('replies', 'votes', 'follows'), each = 6)
+  type = rep(types, each = 6)
 )
 
 ggplot(errs, aes(x = groups, y = error_rate, color = type)) +
@@ -121,7 +133,7 @@ ggplot(errs, aes(x = groups, y = error_rate, color = type)) +
        y = "Inconsistency Rate") +
   theme_minimal()
 
-# ggsave('results/incons.svg')
+# ggsave(paste('results/incons-', n, '.svg', sep=''))
 ```
 
 ## Inspect relationship between groups
@@ -134,7 +146,7 @@ k = list(replies = 3, votes = 4, follows = 3)
 
 groups = list(3)
 
-for (type in c('replies', 'votes', 'follows')) {
+for (type in types) {
   clus = data.frame(
     name = V(gs[[type]])$name,
     type = clu(res[[type]][[k[[type]]]])
@@ -149,7 +161,7 @@ Build graph of relationships between different equivalence classes
 
 ```{r}
 group_rel = list(3)
-for (type in c('replies', 'votes', 'follows')) {
+for (type in types) {
   A = IM(res[[type]][[k[[type]]]])
 
   A[A == 'com'] <- 1
@@ -164,7 +176,7 @@ for (type in c('replies', 'votes', 'follows')) {
   
   group_sizes = count(groups[[type]], !!sym((group_col)))
   
-  # png(paste('results/bm/rel-', type, '.png', sep=''))
+  # png(paste('results/bm/rel-', n, '-', type, '.png', sep=''))
   plot(g, layout = layout_with_fr(g, maxx=rep(400, vcount(g))),
        vertex.frame.width=0, vertex.color = V(g), vertex.size = group_sizes$n,vertex.label.color='black',
        edge.arrow.size = .5, loop.size = 1.5)
@@ -206,7 +218,7 @@ k = list(replies = 3, votes = 4, follows = 3)
 groups = list(3)
 
 
-for (type in c('replies', 'votes', 'follows')) {
+for (type in types) {
   clus = data.frame(
     name = V(gs[[type]])$name,
     type = clu(res[[type]][[k[[type]]]])
@@ -225,7 +237,7 @@ for (type in c('replies', 'votes', 'follows')) {
 }
 
 
-for (type in c('replies', 'votes', 'follows')) {
+for (type in types) {
   x = paste('group_', type, sep='')
   for (col in c('indegree', 'outdegree', 'betweenness', 'eigen')) {
     p = ggplot(groups[[type]], aes(x = as.factor(.data[[x]]), y = .data[[col]])) +
@@ -238,7 +250,7 @@ for (type in c('replies', 'votes', 'follows')) {
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 90, hjust = 1))
     print(p)
-    # ggsave(paste('results/bm/', type, '-', col, '.svg', sep=''))
+    # ggsave(paste('results/bm/', type, '-', n, '-', col, '.svg', sep=''))
   }
 }
 
