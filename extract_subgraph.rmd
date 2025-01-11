@@ -4,20 +4,42 @@ library(arrow)
 library(igraph)
 ```
 
+Find users common in replies, votes, and follows edge lists
+
+```{r}
+votes = read_parquet("data/df_edge_list_directed_users_votes_to_postings_net.parquet") %>%
+  rename(weight = count_votes_to_postings_net)
+replies <- read_parquet("data/df_edge_list_directed_users_postings_replies.parquet") %>%
+    rename(weight = count_posting_replies)
+follows = read_parquet('data/df_edge_list_directed_users_combined_postings_replies_and_votes_to_postings_net_and_follow_connections.parquet')
+follows = follows %>% filter(count_follow_connection > 0) %>%
+  rename(weight = count_follow_connection)
+
+users = unique(c(votes$ID_CommunityIdentity_Target, votes$ID_CommunityIdentity_Source, replies$ID_CommunityIdentity_Target, replies$ID_CommunityIdentity_Source, follows$ID_CommunityIdentity_Target, follows$ID_CommunityIdentity_Source))
+users = users[
+    (users %in% votes$ID_CommunityIdentity_Target |
+    users %in% votes$ID_CommunityIdentity_Source) &
+    (users %in% replies$ID_CommunityIdentity_Target |
+    users %in% replies$ID_CommunityIdentity_Source) &
+    (users %in% follows$ID_CommunityIdentity_Target |
+    users %in% follows$ID_CommunityIdentity_Source)
+]
+```
+
+
 We extract subgraphs of an appropriate size from the sparsest graph, the replies graph, using the modularity maximisation community detection algorithm, then extract the same nodes in the community from the votes and follows graphs.
 
 ```{r}
-df_replies <- read_parquet("data/df_edge_list_directed_users_postings_replies.parquet") %>%
-    rename(weight = count_posting_replies)
-g_replies_undir = graph_from_data_frame(df_replies, directed = FALSE)
-g_replies <- graph_from_data_frame(df_replies, directed = TRUE)
+# use reply graph as base graph
+g_replies_undir = graph_from_data_frame(replies, directed = FALSE)
+g_replies <- graph_from_data_frame(replies, directed = TRUE)
 
-upper = 300
-lower = 200
+upper = 150
+lower = 100
 
-# use modularity maximisation on the undirected graph to find a community of appropriate size
+# use modularity maximisation on the undirected graph to find a reply community of appropriate size
 while (TRUE) {
-  comm = cluster_louvain(g_replies_undir)
+  comm = cluster_louvain(g_s_undir)
   comm_sizes = sizes(comm)
   if ( min(comm_sizes) > lower & min(comm_sizes) < upper) {
     print(min(comm_sizes))
@@ -27,9 +49,36 @@ while (TRUE) {
 
 n = min(comm_sizes)
 smallest = which.min(comm_sizes)
-g_replies = induced_subgraph(g_replies, communities(comm)[[smallest]])
+base = induced_subgraph(g_replies, communities(comm)[[smallest]])
+```
 
-nodes = V(g_replies)$name
+```{r}
+# use follow graph as base graph
+g_follows_undir = graph_from_data_frame(follows, directed = FALSE)
+g_follows = graph_from_data_frame(follows, directed = TRUE)
+nodes = V(g_follows)$name
+nodes = nodes[as.integer(nodes) %in% users]
+g_follows_undir = induced_subgraph(g_follows_undir, nodes)
+
+
+comm = cluster_louvain(g_follows_undir)
+comm_sizes = sizes(comm)
+n = comm_sizes[(140 < comm_sizes & comm_sizes < 160)][1]
+
+idx = which(comm_sizes == n)
+base = induced_subgraph(g_follows, communities(comm)[[idx]])
+```
+
+Extract same nodes as base graph from other graphs
+
+```{r}
+nodes = V(base)$name
+
+# extract same nodes from replies graph
+df_replies <- read_parquet("data/df_edge_list_directed_users_postings_replies.parquet") %>%
+    rename(weight = count_posting_replies)
+g_replies <- graph_from_data_frame(df_replies, directed = TRUE)
+g_replies <- induced_subgraph(g_replies, vids = nodes)
 
 # extract same nodes from votes graph
 votes = read_parquet("data/df_edge_list_directed_users_votes_to_postings_net.parquet") %>%
@@ -38,12 +87,14 @@ g_votes = graph_from_data_frame(votes, directed = TRUE)
 g_votes <- induced_subgraph(g_votes, vids = nodes)
 
 # extract same nodes from follows graph
-follows = read_parquet('data/df_edge_list_directed_users_combined_postings_replies_and_votes_to_postings_net_and_follow_connections.parquet')
-follows = follows %>% filter(count_follow_connection > 0) %>%
-  rename(weight = count_follow_connection)
-g_follows =  graph_from_data_frame(follows, directed = TRUE)
+# follows = read_parquet('data/df_edge_list_directed_users_combined_postings_replies_and_votes_to_postings_net_and_follow_connections.parquet')
+# follows = follows %>% filter(count_follow_connection > 0) %>%
+#    rename(weight = count_follow_connection)
+# g_follows =  graph_from_data_frame(follows, directed = TRUE)
 g_follows = induced_subgraph(g_follows, vids = nodes)
+```
 
+```{r}
 write_graph(g_replies, paste('graphs/replies-',n,'.graphml', sep=''), format='graphml')
 write_graph(g_votes, paste('graphs/votes-',n,'.graphml', sep=''), format = 'graphml')
 write_graph(g_follows, paste('graphs/follows-',n,'.graphml', sep=''), format = 'graphml')
