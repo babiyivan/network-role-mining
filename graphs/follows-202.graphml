@@ -1,0 +1,2186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="e_count_posting_replies" for="edge" attr.name="count_posting_replies" attr.type="double"/>
+  <key id="e_count_votes_to_postings_net" for="edge" attr.name="count_votes_to_postings_net" attr.type="double"/>
+  <key id="e_weight" for="edge" attr.name="weight" attr.type="double"/>
+  <key id="e_weight_total" for="edge" attr.name="weight_total" attr.type="double"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_name">2423</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">12636</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">23661</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">28074</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">30905</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">39161</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">40136</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">46747</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">46793</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">49108</data>
+    </node>
+    <node id="n10">
+      <data key="v_name">50779</data>
+    </node>
+    <node id="n11">
+      <data key="v_name">52261</data>
+    </node>
+    <node id="n12">
+      <data key="v_name">55426</data>
+    </node>
+    <node id="n13">
+      <data key="v_name">56148</data>
+    </node>
+    <node id="n14">
+      <data key="v_name">56887</data>
+    </node>
+    <node id="n15">
+      <data key="v_name">71265</data>
+    </node>
+    <node id="n16">
+      <data key="v_name">71741</data>
+    </node>
+    <node id="n17">
+      <data key="v_name">77581</data>
+    </node>
+    <node id="n18">
+      <data key="v_name">79812</data>
+    </node>
+    <node id="n19">
+      <data key="v_name">80627</data>
+    </node>
+    <node id="n20">
+      <data key="v_name">84211</data>
+    </node>
+    <node id="n21">
+      <data key="v_name">84701</data>
+    </node>
+    <node id="n22">
+      <data key="v_name">86244</data>
+    </node>
+    <node id="n23">
+      <data key="v_name">89760</data>
+    </node>
+    <node id="n24">
+      <data key="v_name">90151</data>
+    </node>
+    <node id="n25">
+      <data key="v_name">96500</data>
+    </node>
+    <node id="n26">
+      <data key="v_name">98059</data>
+    </node>
+    <node id="n27">
+      <data key="v_name">98105</data>
+    </node>
+    <node id="n28">
+      <data key="v_name">101681</data>
+    </node>
+    <node id="n29">
+      <data key="v_name">102046</data>
+    </node>
+    <node id="n30">
+      <data key="v_name">107886</data>
+    </node>
+    <node id="n31">
+      <data key="v_name">115078</data>
+    </node>
+    <node id="n32">
+      <data key="v_name">119359</data>
+    </node>
+    <node id="n33">
+      <data key="v_name">120076</data>
+    </node>
+    <node id="n34">
+      <data key="v_name">120451</data>
+    </node>
+    <node id="n35">
+      <data key="v_name">120869</data>
+    </node>
+    <node id="n36">
+      <data key="v_name">123892</data>
+    </node>
+    <node id="n37">
+      <data key="v_name">124124</data>
+    </node>
+    <node id="n38">
+      <data key="v_name">128142</data>
+    </node>
+    <node id="n39">
+      <data key="v_name">132170</data>
+    </node>
+    <node id="n40">
+      <data key="v_name">132702</data>
+    </node>
+    <node id="n41">
+      <data key="v_name">137790</data>
+    </node>
+    <node id="n42">
+      <data key="v_name">143116</data>
+    </node>
+    <node id="n43">
+      <data key="v_name">144823</data>
+    </node>
+    <node id="n44">
+      <data key="v_name">151279</data>
+    </node>
+    <node id="n45">
+      <data key="v_name">152680</data>
+    </node>
+    <node id="n46">
+      <data key="v_name">156643</data>
+    </node>
+    <node id="n47">
+      <data key="v_name">157625</data>
+    </node>
+    <node id="n48">
+      <data key="v_name">161273</data>
+    </node>
+    <node id="n49">
+      <data key="v_name">163020</data>
+    </node>
+    <node id="n50">
+      <data key="v_name">166728</data>
+    </node>
+    <node id="n51">
+      <data key="v_name">167851</data>
+    </node>
+    <node id="n52">
+      <data key="v_name">170020</data>
+    </node>
+    <node id="n53">
+      <data key="v_name">175080</data>
+    </node>
+    <node id="n54">
+      <data key="v_name">176952</data>
+    </node>
+    <node id="n55">
+      <data key="v_name">178774</data>
+    </node>
+    <node id="n56">
+      <data key="v_name">180072</data>
+    </node>
+    <node id="n57">
+      <data key="v_name">182097</data>
+    </node>
+    <node id="n58">
+      <data key="v_name">185084</data>
+    </node>
+    <node id="n59">
+      <data key="v_name">185193</data>
+    </node>
+    <node id="n60">
+      <data key="v_name">189025</data>
+    </node>
+    <node id="n61">
+      <data key="v_name">189209</data>
+    </node>
+    <node id="n62">
+      <data key="v_name">196359</data>
+    </node>
+    <node id="n63">
+      <data key="v_name">207744</data>
+    </node>
+    <node id="n64">
+      <data key="v_name">208539</data>
+    </node>
+    <node id="n65">
+      <data key="v_name">210864</data>
+    </node>
+    <node id="n66">
+      <data key="v_name">212987</data>
+    </node>
+    <node id="n67">
+      <data key="v_name">214581</data>
+    </node>
+    <node id="n68">
+      <data key="v_name">221444</data>
+    </node>
+    <node id="n69">
+      <data key="v_name">224367</data>
+    </node>
+    <node id="n70">
+      <data key="v_name">226595</data>
+    </node>
+    <node id="n71">
+      <data key="v_name">227327</data>
+    </node>
+    <node id="n72">
+      <data key="v_name">227468</data>
+    </node>
+    <node id="n73">
+      <data key="v_name">233191</data>
+    </node>
+    <node id="n74">
+      <data key="v_name">239484</data>
+    </node>
+    <node id="n75">
+      <data key="v_name">240312</data>
+    </node>
+    <node id="n76">
+      <data key="v_name">242124</data>
+    </node>
+    <node id="n77">
+      <data key="v_name">244690</data>
+    </node>
+    <node id="n78">
+      <data key="v_name">247557</data>
+    </node>
+    <node id="n79">
+      <data key="v_name">249435</data>
+    </node>
+    <node id="n80">
+      <data key="v_name">295061</data>
+    </node>
+    <node id="n81">
+      <data key="v_name">499415</data>
+    </node>
+    <node id="n82">
+      <data key="v_name">499764</data>
+    </node>
+    <node id="n83">
+      <data key="v_name">500826</data>
+    </node>
+    <node id="n84">
+      <data key="v_name">504845</data>
+    </node>
+    <node id="n85">
+      <data key="v_name">505289</data>
+    </node>
+    <node id="n86">
+      <data key="v_name">505757</data>
+    </node>
+    <node id="n87">
+      <data key="v_name">506471</data>
+    </node>
+    <node id="n88">
+      <data key="v_name">506757</data>
+    </node>
+    <node id="n89">
+      <data key="v_name">506944</data>
+    </node>
+    <node id="n90">
+      <data key="v_name">509253</data>
+    </node>
+    <node id="n91">
+      <data key="v_name">509724</data>
+    </node>
+    <node id="n92">
+      <data key="v_name">511991</data>
+    </node>
+    <node id="n93">
+      <data key="v_name">512475</data>
+    </node>
+    <node id="n94">
+      <data key="v_name">512806</data>
+    </node>
+    <node id="n95">
+      <data key="v_name">514730</data>
+    </node>
+    <node id="n96">
+      <data key="v_name">519189</data>
+    </node>
+    <node id="n97">
+      <data key="v_name">522053</data>
+    </node>
+    <node id="n98">
+      <data key="v_name">522710</data>
+    </node>
+    <node id="n99">
+      <data key="v_name">526130</data>
+    </node>
+    <node id="n100">
+      <data key="v_name">529606</data>
+    </node>
+    <node id="n101">
+      <data key="v_name">531298</data>
+    </node>
+    <node id="n102">
+      <data key="v_name">531819</data>
+    </node>
+    <node id="n103">
+      <data key="v_name">532362</data>
+    </node>
+    <node id="n104">
+      <data key="v_name">546089</data>
+    </node>
+    <node id="n105">
+      <data key="v_name">548663</data>
+    </node>
+    <node id="n106">
+      <data key="v_name">550503</data>
+    </node>
+    <node id="n107">
+      <data key="v_name">553428</data>
+    </node>
+    <node id="n108">
+      <data key="v_name">558683</data>
+    </node>
+    <node id="n109">
+      <data key="v_name">563638</data>
+    </node>
+    <node id="n110">
+      <data key="v_name">564293</data>
+    </node>
+    <node id="n111">
+      <data key="v_name">565801</data>
+    </node>
+    <node id="n112">
+      <data key="v_name">571073</data>
+    </node>
+    <node id="n113">
+      <data key="v_name">572131</data>
+    </node>
+    <node id="n114">
+      <data key="v_name">572820</data>
+    </node>
+    <node id="n115">
+      <data key="v_name">578572</data>
+    </node>
+    <node id="n116">
+      <data key="v_name">580675</data>
+    </node>
+    <node id="n117">
+      <data key="v_name">581884</data>
+    </node>
+    <node id="n118">
+      <data key="v_name">581885</data>
+    </node>
+    <node id="n119">
+      <data key="v_name">585936</data>
+    </node>
+    <node id="n120">
+      <data key="v_name">589546</data>
+    </node>
+    <node id="n121">
+      <data key="v_name">601497</data>
+    </node>
+    <node id="n122">
+      <data key="v_name">601629</data>
+    </node>
+    <node id="n123">
+      <data key="v_name">601863</data>
+    </node>
+    <node id="n124">
+      <data key="v_name">604347</data>
+    </node>
+    <node id="n125">
+      <data key="v_name">520847</data>
+    </node>
+    <node id="n126">
+      <data key="v_name">199145</data>
+    </node>
+    <node id="n127">
+      <data key="v_name">94553</data>
+    </node>
+    <node id="n128">
+      <data key="v_name">97550</data>
+    </node>
+    <node id="n129">
+      <data key="v_name">126435</data>
+    </node>
+    <node id="n130">
+      <data key="v_name">566200</data>
+    </node>
+    <node id="n131">
+      <data key="v_name">5693</data>
+    </node>
+    <node id="n132">
+      <data key="v_name">149960</data>
+    </node>
+    <node id="n133">
+      <data key="v_name">500613</data>
+    </node>
+    <node id="n134">
+      <data key="v_name">16044</data>
+    </node>
+    <node id="n135">
+      <data key="v_name">579532</data>
+    </node>
+    <node id="n136">
+      <data key="v_name">49643</data>
+    </node>
+    <node id="n137">
+      <data key="v_name">122701</data>
+    </node>
+    <node id="n138">
+      <data key="v_name">154583</data>
+    </node>
+    <node id="n139">
+      <data key="v_name">182564</data>
+    </node>
+    <node id="n140">
+      <data key="v_name">230804</data>
+    </node>
+    <node id="n141">
+      <data key="v_name">521235</data>
+    </node>
+    <node id="n142">
+      <data key="v_name">556267</data>
+    </node>
+    <node id="n143">
+      <data key="v_name">562604</data>
+    </node>
+    <node id="n144">
+      <data key="v_name">564156</data>
+    </node>
+    <node id="n145">
+      <data key="v_name">588946</data>
+    </node>
+    <node id="n146">
+      <data key="v_name">506775</data>
+    </node>
+    <node id="n147">
+      <data key="v_name">15797</data>
+    </node>
+    <node id="n148">
+      <data key="v_name">102937</data>
+    </node>
+    <node id="n149">
+      <data key="v_name">103217</data>
+    </node>
+    <node id="n150">
+      <data key="v_name">189335</data>
+    </node>
+    <node id="n151">
+      <data key="v_name">504295</data>
+    </node>
+    <node id="n152">
+      <data key="v_name">94662</data>
+    </node>
+    <node id="n153">
+      <data key="v_name">6483</data>
+    </node>
+    <node id="n154">
+      <data key="v_name">23214</data>
+    </node>
+    <node id="n155">
+      <data key="v_name">88519</data>
+    </node>
+    <node id="n156">
+      <data key="v_name">55745</data>
+    </node>
+    <node id="n157">
+      <data key="v_name">176407</data>
+    </node>
+    <node id="n158">
+      <data key="v_name">217361</data>
+    </node>
+    <node id="n159">
+      <data key="v_name">520275</data>
+    </node>
+    <node id="n160">
+      <data key="v_name">224796</data>
+    </node>
+    <node id="n161">
+      <data key="v_name">50652</data>
+    </node>
+    <node id="n162">
+      <data key="v_name">188340</data>
+    </node>
+    <node id="n163">
+      <data key="v_name">123318</data>
+    </node>
+    <node id="n164">
+      <data key="v_name">508201</data>
+    </node>
+    <node id="n165">
+      <data key="v_name">183546</data>
+    </node>
+    <node id="n166">
+      <data key="v_name">515187</data>
+    </node>
+    <node id="n167">
+      <data key="v_name">552648</data>
+    </node>
+    <node id="n168">
+      <data key="v_name">51318</data>
+    </node>
+    <node id="n169">
+      <data key="v_name">30980</data>
+    </node>
+    <node id="n170">
+      <data key="v_name">74021</data>
+    </node>
+    <node id="n171">
+      <data key="v_name">110195</data>
+    </node>
+    <node id="n172">
+      <data key="v_name">193266</data>
+    </node>
+    <node id="n173">
+      <data key="v_name">244154</data>
+    </node>
+    <node id="n174">
+      <data key="v_name">60645</data>
+    </node>
+    <node id="n175">
+      <data key="v_name">71918</data>
+    </node>
+    <node id="n176">
+      <data key="v_name">561302</data>
+    </node>
+    <node id="n177">
+      <data key="v_name">500728</data>
+    </node>
+    <node id="n178">
+      <data key="v_name">100117</data>
+    </node>
+    <node id="n179">
+      <data key="v_name">109165</data>
+    </node>
+    <node id="n180">
+      <data key="v_name">528071</data>
+    </node>
+    <node id="n181">
+      <data key="v_name">212325</data>
+    </node>
+    <node id="n182">
+      <data key="v_name">144628</data>
+    </node>
+    <node id="n183">
+      <data key="v_name">202290</data>
+    </node>
+    <node id="n184">
+      <data key="v_name">564597</data>
+    </node>
+    <node id="n185">
+      <data key="v_name">137393</data>
+    </node>
+    <node id="n186">
+      <data key="v_name">212259</data>
+    </node>
+    <node id="n187">
+      <data key="v_name">514489</data>
+    </node>
+    <node id="n188">
+      <data key="v_name">130437</data>
+    </node>
+    <node id="n189">
+      <data key="v_name">40019</data>
+    </node>
+    <node id="n190">
+      <data key="v_name">44009</data>
+    </node>
+    <node id="n191">
+      <data key="v_name">84724</data>
+    </node>
+    <node id="n192">
+      <data key="v_name">578630</data>
+    </node>
+    <node id="n193">
+      <data key="v_name">86351</data>
+    </node>
+    <node id="n194">
+      <data key="v_name">5464</data>
+    </node>
+    <node id="n195">
+      <data key="v_name">215382</data>
+    </node>
+    <node id="n196">
+      <data key="v_name">505883</data>
+    </node>
+    <node id="n197">
+      <data key="v_name">603183</data>
+    </node>
+    <node id="n198">
+      <data key="v_name">500116</data>
+    </node>
+    <node id="n199">
+      <data key="v_name">31156</data>
+    </node>
+    <node id="n200">
+      <data key="v_name">505213</data>
+    </node>
+    <node id="n201">
+      <data key="v_name">568926</data>
+    </node>
+    <edge source="n0" target="n64">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n1" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n1" target="n89">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n2" target="n27">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">18</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">849.672150458022</data>
+    </edge>
+    <edge source="n3" target="n39">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">830.157489709123</data>
+    </edge>
+    <edge source="n3" target="n65">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n3" target="n127">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n3" target="n128">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n3" target="n129">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n3" target="n130">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n4" target="n112">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n5" target="n96">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n6" target="n31">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n7" target="n56">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">25</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">849.87320635592</data>
+    </edge>
+    <edge source="n7" target="n131">
+      <data key="e_count_posting_replies">4</data>
+      <data key="e_count_votes_to_postings_net">56</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">916.796334775214</data>
+    </edge>
+    <edge source="n8" target="n17">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n8" target="n32">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">5</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">834.749174591217</data>
+    </edge>
+    <edge source="n8" target="n46">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n8" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n9" target="n8">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">6</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">835.89709581174</data>
+    </edge>
+    <edge source="n10" target="n73">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n10" target="n132">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n10" target="n133">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n11" target="n23">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n11" target="n106">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n11" target="n134">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n11" target="n135">
+      <data key="e_count_posting_replies">6</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">871.625295379003</data>
+    </edge>
+    <edge source="n12" target="n49">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n12" target="n100">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n67">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n73">
+      <data key="e_count_posting_replies">5</data>
+      <data key="e_count_votes_to_postings_net">10</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">871.8263512769</data>
+    </edge>
+    <edge source="n13" target="n110">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n121">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n135">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n13" target="n136">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n137">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n138">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n139">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n140">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n141">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.009568488599</data>
+    </edge>
+    <edge source="n13" target="n142">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n143">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n13" target="n144">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n13" target="n145">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n14" target="n51">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n15" target="n146">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n16" target="n2">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">7</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">837.045017032264</data>
+    </edge>
+    <edge source="n16" target="n70">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">832.45333215017</data>
+    </edge>
+    <edge source="n16" target="n73">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n16" target="n76">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n16" target="n88">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n16" target="n112">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n16" target="n147">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n16" target="n148">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n16" target="n149">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n16" target="n150">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n16" target="n151">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n17" target="n8">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n17" target="n32">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n18" target="n77">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n18" target="n153">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n19" target="n37">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n20" target="n121">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n21" target="n135">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n22" target="n155">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n23" target="n49">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n23" target="n156">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n23" target="n157">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n24" target="n27">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n25" target="n131">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n26" target="n60">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n27" target="n2">
+      <data key="e_count_posting_replies">5</data>
+      <data key="e_count_votes_to_postings_net">44</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">910.855672774699</data>
+    </edge>
+    <edge source="n28" target="n64">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n28" target="n96">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n29" target="n75">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">833.601253370693</data>
+    </edge>
+    <edge source="n29" target="n158">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n29" target="n159">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">833.601253370693</data>
+    </edge>
+    <edge source="n30" target="n58">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n30" target="n149">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n30" target="n152">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n30" target="n160">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n31" target="n82">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">239</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1095.52834754794</data>
+    </edge>
+    <edge source="n32" target="n17">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n33" target="n161">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n34" target="n35">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n35" target="n34">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">8</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">830.358545607021</data>
+    </edge>
+    <edge source="n36" target="n149">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n37" target="n72">
+      <data key="e_count_posting_replies">15</data>
+      <data key="e_count_votes_to_postings_net">59</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1006.41841754022</data>
+    </edge>
+    <edge source="n39" target="n163">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">5</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">826.91478194545</data>
+    </edge>
+    <edge source="n40" target="n96">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n41" target="n131">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n41" target="n154">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n43" target="n164">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n44" target="n23">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n45" target="n81">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n45" target="n165">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n46" target="n8">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">8</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">838.192938252787</data>
+    </edge>
+    <edge source="n47" target="n15">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n48" target="n143">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n49" target="n12">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n49" target="n54">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n49" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n51" target="n93">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n52" target="n50">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n52" target="n96">
+      <data key="e_count_posting_replies">2</data>
+      <data key="e_count_votes_to_postings_net">15</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">854.062779442218</data>
+    </edge>
+    <edge source="n53" target="n49">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n53" target="n72">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n54" target="n49">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n55" target="n11">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n55" target="n42">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n55" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n55" target="n125">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n56" target="n7">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n57" target="n144">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">6</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">828.062703165974</data>
+    </edge>
+    <edge source="n58" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">6</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">828.062703165974</data>
+    </edge>
+    <edge source="n59" target="n58">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">7</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.210624386497</data>
+    </edge>
+    <edge source="n59" target="n72">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n59" target="n82">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n59" target="n149">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n59" target="n166">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n60" target="n13">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.009568488599</data>
+    </edge>
+    <edge source="n61" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n62" target="n128">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n63" target="n76">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n64" target="n168">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n65" target="n117">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n66" target="n6">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n66" target="n31">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n68" target="n27">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n68" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n68" target="n169">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n69" target="n50">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">9</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">839.340859473311</data>
+    </edge>
+    <edge source="n69" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n70" target="n170">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n71" target="n2">
+      <data key="e_count_posting_replies">2</data>
+      <data key="e_count_votes_to_postings_net">121</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">975.742428817706</data>
+    </edge>
+    <edge source="n71" target="n27">
+      <data key="e_count_posting_replies">5</data>
+      <data key="e_count_votes_to_postings_net">83</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">955.624600375114</data>
+    </edge>
+    <edge source="n71" target="n103">
+      <data key="e_count_posting_replies">2</data>
+      <data key="e_count_votes_to_postings_net">154</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1013.62382909498</data>
+    </edge>
+    <edge source="n72" target="n37">
+      <data key="e_count_posting_replies">18</data>
+      <data key="e_count_votes_to_postings_net">42</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1010.40693472862</data>
+    </edge>
+    <edge source="n72" target="n49">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n72" target="n53">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n72" target="n73">
+      <data key="e_count_posting_replies">12</data>
+      <data key="e_count_votes_to_postings_net">16</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">933.554627120407</data>
+    </edge>
+    <edge source="n72" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n72" target="n135">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">8</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">838.192938252787</data>
+    </edge>
+    <edge source="n72" target="n137">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.009568488599</data>
+    </edge>
+    <edge source="n72" target="n149">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">6</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">828.062703165974</data>
+    </edge>
+    <edge source="n72" target="n153">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">6</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">835.89709581174</data>
+    </edge>
+    <edge source="n72" target="n171">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n72" target="n172">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.009568488599</data>
+    </edge>
+    <edge source="n73" target="n33">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n73" target="n72">
+      <data key="e_count_posting_replies">11</data>
+      <data key="e_count_votes_to_postings_net">13</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">922.27647081307</data>
+    </edge>
+    <edge source="n74" target="n173">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n75" target="n8">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">331</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1201.1370998361</data>
+    </edge>
+    <edge source="n75" target="n58">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1225</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">2227.37867098409</data>
+    </edge>
+    <edge source="n75" target="n69">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">48</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">876.27539442796</data>
+    </edge>
+    <edge source="n75" target="n87">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">39</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">865.944103443248</data>
+    </edge>
+    <edge source="n75" target="n88">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">13</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">836.098151709638</data>
+    </edge>
+    <edge source="n75" target="n89">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">15</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">838.393994150685</data>
+    </edge>
+    <edge source="n75" target="n91">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">164</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1009.43425600868</data>
+    </edge>
+    <edge source="n75" target="n131">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">173</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1019.76554699339</data>
+    </edge>
+    <edge source="n75" target="n153">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">67</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">898.085897617906</data>
+    </edge>
+    <edge source="n75" target="n174">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">75</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">907.269267382093</data>
+    </edge>
+    <edge source="n75" target="n175">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">5</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">826.91478194545</data>
+    </edge>
+    <edge source="n76" target="n63">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n76" target="n176">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n77" target="n177">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n78" target="n11">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n78" target="n178">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n79" target="n37">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n79" target="n126">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n79" target="n137">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n79" target="n155">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n79" target="n179">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n79" target="n180">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">5</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">826.91478194545</data>
+    </edge>
+    <edge source="n80" target="n74">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n82" target="n31">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n82" target="n59">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n83" target="n139">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n84" target="n16">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n85" target="n50">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n85" target="n139">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n86" target="n29">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n87" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n87" target="n181">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n88" target="n39">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n88" target="n58">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n88" target="n182">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n89" target="n1">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n89" target="n43">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n89" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n89" target="n162">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n89" target="n183">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n90" target="n184">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n91" target="n73">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n91" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n92" target="n16">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n93" target="n58">
+      <data key="e_count_posting_replies">2</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">841.43564601646</data>
+    </edge>
+    <edge source="n93" target="n73">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n93" target="n126">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">832.45333215017</data>
+    </edge>
+    <edge source="n94" target="n96">
+      <data key="e_count_posting_replies">2</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">836.843961134366</data>
+    </edge>
+    <edge source="n94" target="n185">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n95" target="n9">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n96" target="n5">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n96" target="n28">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n96" target="n40">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.009568488599</data>
+    </edge>
+    <edge source="n96" target="n52">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n96" target="n94">
+      <data key="e_count_posting_replies">5</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">860.347139071666</data>
+    </edge>
+    <edge source="n96" target="n119">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n96" target="n186">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n96" target="n187">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n97" target="n150">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n98" target="n152">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n99" target="n131">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n99" target="n145">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n99" target="n188">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n100" target="n189">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n100" target="n190">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n100" target="n191">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n100" target="n192">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n101" target="n165">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n101" target="n181">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n102" target="n135">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n103" target="n2">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">97</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">940.357926879376</data>
+    </edge>
+    <edge source="n103" target="n71">
+      <data key="e_count_posting_replies">2</data>
+      <data key="e_count_votes_to_postings_net">149</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">1007.88422299236</data>
+    </edge>
+    <edge source="n104" target="n185">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n105" target="n177">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n105" target="n194">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n107" target="n119">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n107" target="n195">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n107" target="n196">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n107" target="n197">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n108" target="n38">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">832.45333215017</data>
+    </edge>
+    <edge source="n108" target="n119">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">6</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">828.062703165974</data>
+    </edge>
+    <edge source="n108" target="n124">
+      <data key="e_count_posting_replies">2</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">839.139803575413</data>
+    </edge>
+    <edge source="n108" target="n159">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n109" target="n198">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n110" target="n193">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n113" target="n41">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">17</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">848.524229237499</data>
+    </edge>
+    <edge source="n114" target="n128">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n114" target="n146">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n115" target="n139">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n116" target="n74">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n116" target="n135">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">5</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">826.91478194545</data>
+    </edge>
+    <edge source="n116" target="n198">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n117" target="n65">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">21</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">845.281521473826</data>
+    </edge>
+    <edge source="n118" target="n144">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">3</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">824.618939504403</data>
+    </edge>
+    <edge source="n119" target="n2">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">6</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">828.062703165974</data>
+    </edge>
+    <edge source="n119" target="n34">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n119" target="n87">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n119" target="n96">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">21</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">845.281521473826</data>
+    </edge>
+    <edge source="n119" target="n123">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">12</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">834.950230489115</data>
+    </edge>
+    <edge source="n119" target="n162">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">7</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.210624386497</data>
+    </edge>
+    <edge source="n119" target="n167">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">823.47101828388</data>
+    </edge>
+    <edge source="n119" target="n199">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n119" target="n200">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">1</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">822.323097063356</data>
+    </edge>
+    <edge source="n119" target="n201">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n120" target="n75">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n122" target="n41">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n122" target="n111">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">821.175175842833</data>
+    </edge>
+    <edge source="n122" target="n115">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">2</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">831.305410929646</data>
+    </edge>
+    <edge source="n123" target="n90">
+      <data key="e_count_posting_replies">0</data>
+      <data key="e_count_votes_to_postings_net">4</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">825.766860724927</data>
+    </edge>
+    <edge source="n124" target="n108">
+      <data key="e_count_posting_replies">1</data>
+      <data key="e_count_votes_to_postings_net">0</data>
+      <data key="e_weight">1</data>
+      <data key="e_weight_total">829.009568488599</data>
+    </edge>
+  </graph>
+</graphml>
