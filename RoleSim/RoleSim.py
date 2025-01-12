@@ -20,7 +20,7 @@ import itertools
 
 import time
 
-def bootstrap():
+def bootstrap(actual_data_graph):
     # The code was originally meant to analyze a graph of movies from the IMDb dataset, and thus there might be a
     # few variables defined for this purpose. However, the code should work independent of the dataset.
 
@@ -65,7 +65,7 @@ def bootstrap():
     sorted_nodes = np.array(unsorted_nodes)[sorted_node_degree_indices]
     # print(sorted_nodes)
 
-    global actual_data_graph  # Ensure the graph is accessible globally
+    # global actual_data_graph  # Ensure the graph is accessible globally
     print(f"Number of nodes: {actual_data_graph.number_of_nodes()}")
     print(f"Number of edges: {actual_data_graph.number_of_edges()}")
 
@@ -364,7 +364,7 @@ def get_weight_of_new_iteration_graph_from_formula(previous_iteration, node_u, n
 # Actual Iterative RoleSim algorithm
 # ----------------------------------------------
 
-def iterate(iterative_rolesim_graph_initial):
+def iterate(iterative_rolesim_graph_initial, neighbor_degree_sorted_list, list_of_nodes_selected_sorted):
     '''
     The code uses the edge weights of an undirected networkX graph to store the similarity values between nodes.
     Thus, every node is connected to every other node in this graph, and if there are n nodes, then there are
@@ -394,7 +394,8 @@ def iterate(iterative_rolesim_graph_initial):
         for edge in list(current_iteration.edges):
             node_u = edge[0]
             node_v = edge[1]
-            current_iteration[node_u][node_v]['weight'] = (1-beta) *get_weight_of_new_iteration_graph_from_formula(previous_iteration, node_u, node_v) + beta
+            # get_weight_of_new_iteration_graph_from_formula(previous_iteration, node_u, node_v, neighbor_degree_sorted_list, list_of_nodes_selected_sorted)
+            current_iteration[node_u][node_v]['weight'] = (1-beta) *get_weight_of_new_iteration_graph_from_formula(previous_iteration, node_u, node_v, neighbor_degree_sorted_list, list_of_nodes_selected_sorted) + beta
 
         elapsed_time = time.time() - start_time
         print('Current_iteration')
@@ -411,14 +412,14 @@ def iterate(iterative_rolesim_graph_initial):
 
 # At each point, the first 4 edges of the graph are printed out to ensure that convergence is actually happening.
 
-def full_operation():
-    sorted_nodes, actual_data_graph = bootstrap()
+def full_operation(actual_data_graph):
+    sorted_nodes = list(actual_data_graph.nodes)
     neighbor_degree_sorted_list, sorted_node_list = neigh(sorted_nodes, actual_data_graph)
     comb, graph = permutations(sorted_node_list, actual_data_graph)
     similarity_temp_graph_iceberg = cleaning(comb, graph, neighbor_degree_sorted_list)
     final_similarity_iceberg_graph, list_of_nodes_selected = auxiliary(actual_data_graph, similarity_temp_graph_iceberg)
     list_of_nodes_selected_sorted, iterative_rolesim_graph_initial = conv(list_of_nodes_selected, final_similarity_iceberg_graph)
-    current_iteration = iterate(iterative_rolesim_graph_initial)
+    current_iteration = iterate(iterative_rolesim_graph_initial, neighbor_degree_sorted_list, list_of_nodes_selected_sorted)
     return current_iteration
 
 
