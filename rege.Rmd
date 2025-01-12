@@ -1,0 +1,225 @@
+# REGE
+
+cite:REGE
+
+```{r}
+# install.packages("dplyr")
+# install.packages("igraph")
+# install.packages("blockmodeling")
+
+library(dplyr)
+library(igraph)
+library(blockmodeling)
+```
+
+## Read subgraphs used in the analysis
+
+Graph is extracted through extract_subgraph.ipynb. The subgraphs used for each type of `replies`, `votes` and `follows` are hence composed on the same set of nodes. The graphs differ by the edges.
+
+```{r}
+g_replies <- read_graph("graphs/replies-202.graphml", format = "graphml")
+g_votes <- read_graph("graphs/votes-202.graphml", format = "graphml")
+g_follows <- read_graph("graphs/follows-202.graphml", format = "graphml")
+
+gs <- list(replies = g_replies, votes = g_votes, follows = g_follows)
+```
+
+```{r}
+info <- data.frame(type = c("replies", "votes", "follows"),
+                   nodes = c(vcount(g_replies), vcount(g_votes), vcount(g_follows)),
+                   edges = c(ecount(g_replies), ecount(g_votes), ecount(g_follows)))
+info
+```
+
+## Similarities with Classic REGE
+
+Note: REGE algorithm is heavy in computing the similiarity score over each node pair. For demonstration purpose, one can change the iteration number to 1.
+
+```{r}
+iter=3
+n <- vcount(g_replies)
+results <- list()    
+
+for (type in c("replies", "votes", "follows")) {
+
+  # REGE takes input in the format of an adjacency matrix
+  # g <- get(paste0("g_", type))
+  M <- as_adjacency_matrix(gs[[type]], sparse = FALSE)
+
+  # Default iteration = 3 and initial similarity = 1 to follow the literature 
+  results[[type]] <- REGE(M=M, iter=iter)$E
+  saveRDS(results, file=paste0("results/rege-", type, "-", n, ".rds"))
+}
+
+```
+
+```{r}
+res <- list()
+output <- readRDS("results/rege/rege-202.rds")
+res[["replies"]][["sim"]] = output[["replies"]]
+res[["votes"]][["sim"]]  = output[["votes"]]
+res[["follows"]][["sim"]]  = output[["follows"]]
+```
+
+## Clustering on resulting similarity matrices
+
+Hierarchical clustering is used. Number of clusters with maximum average silhouette width is used as the optimal number of roles.
+
+```{r}
+library(cluster)
+
+for (type in c("replies", "votes", "follows")) {
+
+  d <- as.dist(1-res[[type]][["sim"]])
+    
+  k <- c(2:10)
+  width_hc <- rep(NA,length(k))
+  res_hc <- hclust(d, method="ward.D2")
+  
+  # png(paste0("results/rege/dendrogram-", type, ".png")) # output plot to file
+  plot(res_hc, main="Hierarchical clustering dendrogram", xlab="nodes", cex=0.5)
+  # dev.off()
+
+  for (i in 1:length(k)){
+    ass_hc = cutree(res_hc,k=k[i])
+    sil <- silhouette(ass_hc,d)
+    width_hc[i] <- summary(sil)$avg.width
+  }
+  
+  df <- data.frame(x = k, y = width_hc)
+  p <- ggplot(df, aes(x = x, y = y)) +
+    geom_line() +
+    geom_point() +
+    labs(
+      title = paste0("Average silhouette width for ", type),
+      x = "role size choice",
+      y = "Average silhouette width") +
+    theme_minimal()
+  # ggsave(paste0("results/rege/silhouette-", type, ".svg"))
+  print(p)
+  
+  optimk <- which.max(width_hc)+1
+  paste0("Best silhouette width for", type, "at role number k=", optimk)
+  
+  # store clustering result
+  res[[type]][["optimk"]] <- optimk
+  res[[type]][["membership"]] <- cutree(res_hc, k=optimk)
+  res[[type]][["properties"]] <- data.frame(node_id=names(res[[type]][["membership"]]), roles=unlist(res[[type]][["membership"]])) 
+  
+  # update role assignment to graph
+  gs[[type]] <- set_vertex_attr(gs[[type]], name="role", value = res[[type]][["membership"]])
+  
+  # partitioned matrix
+  M <- as_adjacency_matrix(gs[[type]], sparse = FALSE)
+  res[[type]][["partition"]] <- plot.mat(M, clu = res[[type]][["membership"]], main=paste("Partitioned matrix for", type))
+}
+```
+
+
+## Role distribution
+
+```{r}
+library(ggplot2)
+for (type in c("replies", "votes", "follows")) {
+  g<- ggplot(res[[type]][["properties"]], aes(x = factor(roles))) +
+  geom_bar(width=0.6) +
+  labs(title = paste("Role membership distribution for", type), x = "Role", y = "Count") +
+  theme_minimal() 
+  # ggsave(paste0("results/rege/histogram-", type, ".svg")) # output plot to file
+  print(g)
+}
+```
+
+## Role membership in the graph
+
+```{r}
+palette=categorical_pal(8)
+
+for (type in c("replies", "votes", "follows")) {
+  # g <- get(paste0("g_", type))
+  # V(g)$role <- res[[type]][["membership"]]
+  
+  # png(paste0("results/rege/graph-", type, ".png")) # output plot to file
+  plot.igraph(gs[[type]], layout=layout_with_kk(gs[[type]]), main=paste("Graph for",type),
+              vertex.color=V(gs[[type]])$role, palette=palette, vertex.label.cex=0.4, vertex.size=7, edge.arrow.size=0.1) 
+  legend("topright", legend = levels(factor(V(gs[[type]])$role)), fill = palette, title = "role")
+  # dev.off()
+}
+```
+
+## Role properties and interpretation for each type
+
+```{r}
+library(GGally)
+
+
+for (type in c("replies", "votes", "follows")) {
+  res[[type]][["properties"]] <-  res[[type]][["properties"]] %>% 
+    mutate(
+      in_degree = as.vector(degree(gs[[type]], mode = "in")),
+      out_degree = as.vector(degree(gs[[type]], mode = "out")),
+      total_degree = as.vector(degree(gs[[type]], mode = "total")),
+      betweenness = as.vector(betweenness(gs[[type]])),
+      eigenvector = as.vector(eigen_centrality(gs[[type]])$vector)
+    )
+  
+  x = paste('group_', type, sep='')
+  for (col in c('in_degree', 'out_degree', 'total_degree', 'betweenness', 'eigenvector')) {
+    p = ggplot(res[[type]][["properties"]], aes(x = as.factor(roles), y = .data[[col]])) +
+      geom_boxplot() +
+      labs(
+        title = paste('Boxplot of', col, 'by group in', type, 'graph'),
+        x = 'Group',
+        y = col
+      ) +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    print(p)
+    # ggsave(paste('results/bm/', type, '-', col, '.svg', sep=''))
+  }
+  
+  
+  df <- res[[type]][["properties"]] %>%
+    group_by(roles) %>%
+    summarise(
+      in_degree = mean(in_degree),
+      out_degree = mean(out_degree),
+      total_degree = mean(total_degree),
+      betweenness = mean(betweenness),
+      eigenvector = mean(eigenvector)
+    ) %>%
+    mutate(roles = as.factor(roles))
+
+  
+  p <- ggparcoord(data=df, columns=2:6, groupColumn=1) +
+    theme_minimal() +
+    labs(title=paste("Parallel coordinates for", type)) +
+    scale_color_manual(values=palette)
+  
+  print(p)
+
+}
+```
+
+
+```{r}
+combined <- merge(
+  merge(res[["replies"]][["properties"]][, c("node_id", "roles")], res[["votes"]][["properties"]][, c("node_id", "roles")], by = "node_id", suffixes = c("_replies", "_votes")),
+  res[["follows"]][["properties"]][, c("node_id", "roles")], by = "node_id") %>%
+  rename(roles_follows = roles) 
+str(combined)
+```
+
+Number of unique combinations of roles across the three type is 
+```{r}
+unique(combined[, c("roles_replies", "roles_votes", "roles_follows")])
+
+combined %>%
+  group_by(roles_replies, roles_votes, roles_follows) %>%
+  summarise(frequency = n(), .groups = "drop") %>%
+  arrange(desc(frequency))
+
+```
+
+
+Note: to convert to .ipynb, run `jupytext --to ipynb rege.Rmd` / `jupytext --to ipynb rege.Rmd`.
