@@ -1,0 +1,94 @@
+# Hierarchical Clustering
+
+SimRank / RoleSim / REGE return similarity matrix as output. These matrices are converted to distance matrix for hierarchical clustering.
+
+```{r}
+library(arrow)
+library(cluster)
+```
+
+# SimRank
+
+```{r}
+postings_replies <- read_parquet("results/simrank/sr_postings_replies_unweighted.parquet")
+postings_replies <- select(postings_replies, -ncol(postings_replies))
+
+votes_postings_unweighted <- read_parquet("results/simrank/sr_postings_replies_unweighted.parquet")
+votes_postings_unweighted <- select(votes_postings_unweighted, -ncol(votes_postings_unweighted))
+
+votes_postings <- read_parquet("results/simrank/sr_votes_postings.parquet") 
+votes_postings <- select(votes_postings, -ncol(votes_postings))
+
+similarities <- list(postings_replies = postings_replies, votes_postings_unweighted = votes_postings_unweighted, votes_postings= votes_postings)
+```
+
+```{r}
+similarities <- list(
+  votes_postings = votes_postings,
+  votes_postings2 = votes_postings
+)
+
+for (type in names(similarities)) {
+  sim <- similarities[[type]]
+  dist <- as.dist(1-sim)
+  
+  k <- c(2:10)
+  width_hc <- rep(NA,length(k))
+    
+  res_hc <- hclust(dist, method="ward.D2")
+  
+  dendro <- plot(res_hc, main=paste("Hierarchical clustering with dendrogran"), xlab="nodes", cex=0.5)
+  dendro
+  # png(dendro, paste0("results/rege/dendrogram-", type, ".png")) # output plot to file
+  # dev.off()
+
+  for (i in 1:length(k)){
+    ass_hc = cutree(res_hc,k=k[i])
+    sil <- silhouette(ass_hc,dist)
+    width_hc[i] <- summary(sil)$avg.width
+  }
+    
+  df <- data.frame(x = k, y = width_hc)
+  p <- ggplot(df, aes(x = x, y = y)) +
+        geom_line() +
+        geom_point() +
+        labs(
+          title = paste("Average silhouette width for", type),
+          x = "role size choice",
+          y = "Average silhouette width") +
+        theme_minimal()
+      # ggsave(paste0("results/rege/silhouette-", type, ".svg"))
+      print(p)
+
+  optimk <- which.max(width_hc)+1
+  
+  if (max(width_hc) > 0.2){
+    
+    paste0("Best silhouette width for", type, "at role number k=", optimk)
+
+    # partitioned matrix
+    M <- as_adjacency_matrix(gs[[type]], sparse = FALSE)
+    rolelist <- cutree(res_hc, k = optimk)
+    partition <- plot.mat(M, clu = rolelist, main = paste("Partitioned matrix for", type))
+    
+    # update role assignment to graph
+    gs[[type]] <- set_vertex_attr(gs[[type]], name = "role", value = rolelist)
+  
+    # update result
+    res[[type]] <- list(
+      sim = sim,
+      partitionplot = partition,
+      optimk = optimk,
+      rolelist = rolelist,
+      properties = data.frame(
+        node_id = names(membership),
+        role = unlist(membership),
+        stringsAsFactors = FALSE
+      )
+    )
+  } else print(paste("No meaningful clustering result for", type))
+}
+
+```
+
+All attempts with various distance measures and number of clusters have failed.
