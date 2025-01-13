@@ -5,13 +5,12 @@ By default, similarity matrix is taken for clustering, which is converted to dis
 In the case of RoleSim implementation, dissimilarity matrix is pased to this clustering.
 
 ```{r}
-library(cluster)
 library(dplyr)
-library(readr)
 library(tidyr)
-library(tibble)
-library(ggplot2)
+library(readr)
 library(arrow)
+library(cluster)
+library(ggplot2)
 ```
 
 # Helper function for finding optimal cluster (role) number
@@ -91,11 +90,11 @@ clustering <- function(sims, type, algo) {
 
   }
   if(ncol(membership)>1){
-    membership <- membership %>% 
-                    unite(group,contains('group_'), remove=FALSE)
-    res[["membership"]] <- as.data.frame(membership)
+    res[["membership"]] <- membership %>% 
+                    unite(group,contains('group_'), remove=FALSE) %>%
+                    as.data.frame()
+    print(head(res[["membership"]]))
     saveRDS(res, file=paste0("results/",algo,"/clustering-",nrow(membership),".rds"))
-    return(res)
   }
 }
 ```
@@ -125,7 +124,7 @@ types <- c("replies") #, "votes", "follows")
 sims <- list()
 n <- 11323
 for (type in types) {
-  m <- read.csv(paste0("results/rolesim/",type,"-",n,"-dissimilarity-matrix.csv")) 
+  m <- read_csv(paste0("results/rolesim/",type,"-",n,"-dissimilarity-matrix.csv")) 
   sims[[type]] <- m %>% column_to_rownames(var = colnames(m)[1])
 }
 
