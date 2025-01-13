@@ -1,0 +1,431 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="edge" attr.name="weight" attr.type="double" />
+  <graph edgedefault="undirected">
+    <node id="21" />
+    <node id="160" />
+    <node id="39" />
+    <node id="98" />
+    <node id="146" />
+    <node id="50" />
+    <node id="161" />
+    <node id="51" />
+    <node id="55" />
+    <node id="179" />
+    <node id="67" />
+    <node id="89" />
+    <node id="116" />
+    <node id="173" />
+    <node id="207" />
+    <node id="235" />
+    <node id="247" />
+    <edge source="21" target="160">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="39">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="98">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="146">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="50">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="161">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="51">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="21" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="39">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="98">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="146">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="50">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="161">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="51">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="160" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="98">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="146">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="50">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="161">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="51">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="39" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="146">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="50">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="161">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="51">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="98" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="50">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="161">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="51">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="146" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="161">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="51">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="50" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="51">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="161" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="55">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="51" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="179">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="55" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="179" target="67">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="179" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="179" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="179" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="179" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="179" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="179" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="67" target="89">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="67" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="67" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="67" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="67" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="67" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="89" target="116">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="89" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="89" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="89" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="89" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="116" target="173">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="116" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="116" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="116" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="173" target="207">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="173" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="173" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="207" target="235">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="207" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+    <edge source="235" target="247">
+      <data key="d0">0.2</data>
+    </edge>
+  </graph>
+</graphml>
