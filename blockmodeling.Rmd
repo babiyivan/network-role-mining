@@ -14,9 +14,9 @@ library(svglite)
 ```{r}
 types = c('replies', 'votes', 'follows')
 gs = list()
-n = 310
+n = 253
 for (t in types) {
-  gs[[t]] = read_graph(paste('graphs/',t,'-',n,'.graphml', sep=''), format = 'graphml')
+  gs[[t]] = read_graph(paste0('graphs/',t,'-',n,'.graphml'), format = 'graphml')
 }
 ```
 
@@ -25,22 +25,22 @@ for (t in types) {
 Takes a long time. Not necessary to run if .rds result files already available.
 
 ```{r}
-bm = list()
-appr = 'bin'
-appr = 'val'
-for (x in types) {
-  M <- as_adjacency_matrix(gs[[x]], sparse = FALSE)
-  results = list()
-  for (k in 3:8) {
-    res <- optRandomParC(M = M, k = k, rep = 1000,
-        approach = appr, blocks = c('nul', 'com', 'reg'), nCores = 0)
-    print(err(res))
-    results[[k]] = res
+for (appr in c('bin', 'val')) {
+  bm = list()
+  for (x in types) {
+    M <- as_adjacency_matrix(gs[[x]], sparse = FALSE)
+    results = list()
+    for (k in 3:8) {
+      res <- optRandomParC(M = M, k = k, rep = 1000,
+          approach = appr, blocks = c('nul', 'com', 'reg'), nCores = 0)
+      print(err(res))
+      results[[k]] = res
+    }
+    saveRDS(results, file=paste0('results/bm/bm-', x, '-', n, '-', appr, '.rds'))
+    bm[[x]] = results
   }
-  # saveRDS(results, file=paste('results/bm/', x, '-', n, '.rds', sep=''))
-  bm[[x]] = results
+  saveRDS(bm, file=paste0('results/bm/bm-', n, '-', appr, '.rds'))
 }
-saveRDS(bm, file=paste('results/bm/', 'bm-all-', n, '-', appr, '.rds', sep=''))
 for (r in results){
   print(err(r))
 }
