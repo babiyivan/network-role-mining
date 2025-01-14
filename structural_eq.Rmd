@@ -1,0 +1,52 @@
+# Load the igraph library
+
+```{r}
+library(statnet)
+library(igraph)
+```
+
+
+```{r}
+types = c('replies', 'votes', 'follows')
+gs = list()
+Ms = list()
+n = 253
+for (t in types) {
+  gs[[t]] = read_graph(paste0('graphs/',t,'-',n,'.graphml'), format = 'graphml')
+  Ms[[t]] = as_adjacency_matrix(gs[[t]], sparse = FALSE)
+}
+```
+
+```{r}
+eq = list()
+for (t in types) {
+     eq[[t]] = equiv.clust(Ms[[t]], method="euclidean", 
+          mode="digraph", 
+          cluster.method="ward.D2"
+     )
+}
+```
+
+```{r}
+for (t in types) {
+     plot(eq[[t]], labels=eq[[t]]$glabels)
+}
+
+
+# for (k in 3:8) {
+#      b<-blockmodel(M_follows, eq, 
+#                k=4,
+#                mode = "graph") 
+#      plot(b)
+# }
+# classes <- b$block.membership[order(b$order.vector)]
+```
+
+#  use that to visualize using statnet
+
+```{r}
+for (t in types) {
+     plot(gs[[t]], layout = layout_with_fr(gs[[t]]),
+          vertex.frame.width=0, vertex.color = cutree(eq[[t]]$cluster, 3), vertex.size=5, edge.arrow.size=0.2)
+}
+```
