@@ -21,3 +21,7 @@ Your repo folder should look like this.
 ├── exploration.Rmd
 ...
 ```
+
+## Repo structure
+
+![File structure](file_struct.png)
