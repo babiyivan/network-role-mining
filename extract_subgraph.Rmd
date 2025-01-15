@@ -1,7 +1,12 @@
 ```{r message=FALSE, warning=FALSE}
-library(dplyr)
-library(arrow)
-library(igraph)
+libs <- c(
+  "dplyr",
+  "arrow",
+  "igraph"
+)
+new.packages <- libs[!(libs %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+invisible(lapply(libs, library, character.only = TRUE))
 ```
 
 Find users common in replies, votes, and follows edge lists
@@ -15,6 +20,13 @@ follows = read_parquet('data/df_edge_list_directed_users_combined_postings_repli
 follows = follows %>% filter(count_follow_connection > 0) %>%
   rename(weight = count_follow_connection)
 
+els = list(
+  votes = votes,
+  replies = replies,
+  follows = follows
+)
+
+# Get the users that are present in all three datasets
 users = unique(c(votes$ID_CommunityIdentity_Target, votes$ID_CommunityIdentity_Source, replies$ID_CommunityIdentity_Target, replies$ID_CommunityIdentity_Source, follows$ID_CommunityIdentity_Target, follows$ID_CommunityIdentity_Source))
 users = users[
     (users %in% votes$ID_CommunityIdentity_Target |
@@ -30,74 +42,46 @@ users = users[
 We extract subgraphs of an appropriate size from the sparsest graph, the replies graph, using the modularity maximisation community detection algorithm, then extract the same nodes in the community from the votes and follows graphs.
 
 ```{r}
-# use reply graph as base graph
-g_replies_undir = graph_from_data_frame(replies, directed = FALSE)
-g_replies <- graph_from_data_frame(replies, directed = TRUE)
+gs = list()
+base = 'follows'
+g_undir = graph_from_data_frame(els[[base]], directed = FALSE)
+nodes = V(g_undir)$name
+nodes = nodes[as.integer(nodes) %in% users]
+g_undir = induced_subgraph(g_undir, nodes)
 
-upper = 150
-lower = 100
+lower = 240
+upper = 260
 
 # use modularity maximisation on the undirected graph to find a reply community of appropriate size
-while (TRUE) {
-  comm = cluster_louvain(g_s_undir)
+while(TRUE) {
+  comm = cluster_louvain(g_undir)
   comm_sizes = sizes(comm)
-  if ( min(comm_sizes) > lower & min(comm_sizes) < upper) {
-    print(min(comm_sizes))
-    break
-  }
+  n = comm_sizes[(lower < comm_sizes & comm_sizes < upper)][1]
+  if(!is.na(n[[1]])) break
 }
-
-n = min(comm_sizes)
-smallest = which.min(comm_sizes)
-base = induced_subgraph(g_replies, communities(comm)[[smallest]])
-```
-
-```{r}
-# use follow graph as base graph
-g_follows_undir = graph_from_data_frame(follows, directed = FALSE)
-g_follows = graph_from_data_frame(follows, directed = TRUE)
-nodes = V(g_follows)$name
-nodes = nodes[as.integer(nodes) %in% users]
-g_follows_undir = induced_subgraph(g_follows_undir, nodes)
-
-
-comm = cluster_louvain(g_follows_undir)
-comm_sizes = sizes(comm)
-n = comm_sizes[(50 < comm_sizes & comm_sizes < 100)][1]
-
 idx = which(comm_sizes == n)
-base = induced_subgraph(g_follows, communities(comm)[[idx]])
+
+g_base = graph_from_data_frame(els[[base]], directed = TRUE)
+gs[[base]] = induced_subgraph(g_base, communities(comm)[[idx]])
 ```
 
 Extract same nodes as base graph from other graphs
 
 ```{r}
-nodes = V(base)$name
+types = c('votes', 'replies', 'follows')
+nodes = V(gs[[base]])$name
 
-# extract same nodes from replies graph
-df_replies <- read_parquet("data/df_edge_list_directed_users_postings_replies.parquet") %>%
-    rename(weight = count_posting_replies)
-g_replies <- graph_from_data_frame(df_replies, directed = TRUE)
-g_replies <- induced_subgraph(g_replies, vids = nodes)
-
-# extract same nodes from votes graph
-votes = read_parquet("data/df_edge_list_directed_users_votes_to_postings_net.parquet") %>%
-  rename(weight = count_votes_to_postings_net)
-g_votes = graph_from_data_frame(votes, directed = TRUE)
-g_votes <- induced_subgraph(g_votes, vids = nodes)
-
-# extract same nodes from follows graph
-# follows = read_parquet('data/df_edge_list_directed_users_combined_postings_replies_and_votes_to_postings_net_and_follow_connections.parquet')
-# follows = follows %>% filter(count_follow_connection > 0) %>%
-#    rename(weight = count_follow_connection)
-# g_follows =  graph_from_data_frame(follows, directed = TRUE)
-g_follows = induced_subgraph(g_follows, vids = nodes)
+for (t in c('replies', 'votes', 'follows')) {
+  if (t == base) next
+  g = graph_from_data_frame(els[[t]], directed = TRUE)
+  gs[[t]] = induced_subgraph(g, vids = nodes)
+}
 ```
 
 ```{r}
-write_graph(g_replies, paste('graphs/replies-',n,'.graphml', sep=''), format='graphml')
-write_graph(g_votes, paste('graphs/votes-',n,'.graphml', sep=''), format = 'graphml')
-write_graph(g_follows, paste('graphs/follows-',n,'.graphml', sep=''), format = 'graphml')
+for (t in types) {
+  write_graph(gs[[t]], paste0('graphs/',t,'-',n,'.graphml'), format = 'graphml')
+}
 ```
 
 
