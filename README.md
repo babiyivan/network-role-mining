@@ -25,3 +25,9 @@ Your repo folder should look like this.
 ## Repo structure
 
 ![File structure](file_struct.png)
+
+Note: image files in the `results/` folder are mainly for the presentation and final report.
+
+## Running the code
+
+It is be possible to simply run notebook from top to bottom. Code that takes a long time to run are skipped by default, which can be configured to run by simply setting the corresponding switch variable.
