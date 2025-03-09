@@ -14,7 +14,7 @@ Note: image files in the `results/` folder are mainly for the presentation and f
 
 ## Running the code
 
-For the R code, after installing to required libraries, it is possible to simply run each notebook from top to bottom. Code cells that take a long time to run are skipped by default. This behaviour can be configured by simply setting the corresponding switch variable.
+For the R code, after installing the required libraries, it is possible to simply run each notebook from top to bottom. Code cells that take a long time to run are skipped by default. This behaviour can be configured by simply setting the corresponding switch variable.
 
 For the Python code, first install the requirements in the `.txt` file of the respective `.py` files. E.g., `requirements_rolesim.txt` for `rolesim.ipynb`.
 
