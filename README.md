@@ -1,6 +1,8 @@
 # Equivalence-based role mining in network
 
-This project explores equivalence-based role mining using three types of equivalence: structural, automorphic, and regular. It applies algorithms for each equivalence type, including Euclidean distance, SimRank, RoleSim, REGE, and Blockmodelling, to identify and categorise user roles within subgraphs derived from the Der Standard online forum networks capturing the users’ behaviour. In case pairwise similarity is produced by an approximation algorithm, further clustering analysis is performed to assign nodes to clusters. Results indicate that the REGE and Blockmodelling algorithms allow us to infer user roles (network positions) and their relationships.
+## Overview
+
+This project explores equivalence-based role mining using three types of equivalence: structural, automorphic, and regular. It applies algorithms for each equivalence type, including Euclidean distance, SimRank, RoleSim, REGE, and Blockmodelling, to identify and categorise user roles within subgraphs derived from the Der Standard online forum networks capturing the users' behaviour. In case pairwise similarity is produced by an approximation algorithm, further clustering analysis is performed to assign nodes to clusters. Results indicate that the REGE and Blockmodelling algorithms allow us to infer user roles (network positions) and their relationships.
 
 *Data is not shared due to agreement with the university*
 
@@ -10,7 +12,12 @@ This project explores equivalence-based role mining using three types of equival
 
 ![File structure](file_struct.png)
 
-Note: image files in the `results/` folder are mainly for the presentation and final report.
+- `exploration.ipynb`, `extract_subgraph.ipynb`: data inspection and subgraph construction.
+- `rolesim.ipynb`, `simrank.ipynb`, `role_interpretation.ipynb`: Python pipelines for automorphic/regular analyses.
+- `blockmodelling.ipynb`, `clustering.ipynb`, `rege.ipynb`: R notebooks for equivalence diagnostics and role interpretation.
+- `graphs/`: graphml/edgelist inputs and label mappings (data sharing restricted externally).
+- `docs/`: intermediate/final presentations detailing results and limitations.
+- image files in the `results/` folder are mainly for the presentation and final report.
 
 ## Running the code
 
